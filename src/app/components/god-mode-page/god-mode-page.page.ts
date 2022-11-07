@@ -9,21 +9,13 @@ import * as Papa from 'papaparse';
 })
 export class GodModePagePage implements OnInit {
 
-  records:any[]=[];
 
-  constructor(private http:HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-    this.loadDataFromCsvFile();
+    
   }
 
-  loadDataFromCsvFile() {
-    this.http.get("/assets/users.csv", {responseType:"text"}).subscribe((datatemp)=>{
-      let obj = Papa.parse(datatemp);
-      let arr = obj.data;
-      arr.splice(0,1);
-      this.records = arr;
-    })
-  }
+  
 
 }
