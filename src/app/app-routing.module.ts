@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'god-mode-page',
     loadChildren: () => import('./components/god-mode-page/god-mode-page.module').then( m => m.GodModePagePageModule)
+  },
+  {
+    path: 'add-organizations',
+    loadChildren: () => import('./components/add-organizations/add-organizations.module').then( m => m.AddOrganizationsPageModule)
   }
 
 ];
