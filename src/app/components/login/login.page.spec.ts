@@ -1,17 +1,16 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { GodModePagePage } from '../god-mode-page/god-mode-page.page';
 
 import { LoginPage } from './login.page';
 
-describe('Tab1Page', () => {
+describe('Login Page', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoginPage],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);
@@ -22,4 +21,9 @@ describe('Tab1Page', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should redirect to godmode page', () => {
+  //   const mainPage = new GodModePagePage();
+  //   expect()
+  // })
 });
