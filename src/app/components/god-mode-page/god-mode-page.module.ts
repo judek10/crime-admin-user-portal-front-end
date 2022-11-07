@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { GodModePagePageRoutingModule } from './god-mode-page-routing.module';
 
 import { GodModePagePage } from './god-mode-page.page';
+import { HttpClientModule } from "@angular/common/http"
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GodModePagePageRoutingModule
+    GodModePagePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [GodModePagePage]
 })

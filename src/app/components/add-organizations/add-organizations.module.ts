@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AddOrganizationsPageRoutingModule } from './add-organizations-routing.module';
 
 import { AddOrganizationsPage } from './add-organizations.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddOrganizationsPageRoutingModule
+    AddOrganizationsPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [AddOrganizationsPage]
 })

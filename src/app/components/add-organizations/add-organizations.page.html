@@ -20,4 +20,18 @@
        </ion-card-content>
   </ion-card>
   </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>ID</ion-col>
+      <ion-col>API ID</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Created On</ion-col>
+      <ion-col>Updated On</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let organization of organizations">
+      <ion-col *ngFor="let org of organization">{{ org }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
