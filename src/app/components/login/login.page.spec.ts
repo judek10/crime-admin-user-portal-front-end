@@ -22,8 +22,8 @@ describe('Login Page', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should redirect to godmode page', () => {
-  //   const mainPage = new GodModePagePage();
-  //   expect()
-  // })
+  it('should be instance of login page', () => {
+    expect(component instanceof LoginPage).toBe(true);
+  })
+
 });
