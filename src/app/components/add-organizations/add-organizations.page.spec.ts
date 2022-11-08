@@ -34,20 +34,13 @@ describe('AddOrganizationsPage', () => {
     expect(component instanceof AddOrganizationsPage).toBe(true);
   });
 
-  // it('should parse csv into array data type', () => {
-  //   component.loadDataFromCsvFile();
-  //   expect(component.organizations).toBeInstanceOf(Array);
-  // });
-
-  // it('should show the expected number of rows', () => {
-  //   const fixture = TestBed.createComponent(AddOrganizationsPage);
-  //   let reader = new CSVReader();
-    
-  //   fixture.detectChanges();
-  //   const items = fixture.debugElement.queryAll(By.directive(IonRow));
-  //   expect(items).toBeDefined();
-  //   expect(items.length).toBe(reader.convertCsvToArray(httpClient).length);
-  // });
+  it('should show the expected number of rows', () => {
+    const fixture = TestBed.createComponent(AddOrganizationsPage);
+    fixture.detectChanges();
+    const items = fixture.debugElement.queryAll(By.directive(IonRow));
+    expect(items).toBeDefined();
+    expect(items.length - 1).toBe(component.organizations.length); // -1 because there's already an ion-row displayed for columns
+  });
 
   // it('should show organizations after setting them', () => {
   //   component

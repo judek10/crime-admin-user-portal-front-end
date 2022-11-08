@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppRoutingModule } from './app-routing.module'
 import { Router } from '@angular/router';
@@ -26,14 +26,11 @@ describe('AppComponent', () => {
   });
 
   
-  // it('should load login component', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   router = TestBed.inject(Router);
-  //   const navigateSpy = spyOn(router, 'navigate');
-  //   app.goSomewhere();
-  //   expect(navigateSpy).toHaveBeenCalledWith(['/']);
-  // });
-  
+  it('should redirect to login page', fakeAsync(() => {
+    router = TestBed.inject(Router);
+    router.navigate([""]).then(() => {
+      expect(location.pathname).toBe("/");
+    });
+  })); 
 
 });
