@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'add-organizations',
     loadChildren: () => import('./components/add-organizations/add-organizations.module').then( m => m.AddOrganizationsPageModule)
+  },
+  {
+    path: 'user-manager',
+    loadChildren: () => import('./components/users/users.module').then( m => m.UsersPageModule)
   }
 
 ];
