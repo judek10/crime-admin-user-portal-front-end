@@ -21,4 +21,8 @@ describe('GodModePagePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be instance of god mode page', () => {
+    expect(component instanceof GodModePagePage).toBe(true);
+  })
 });

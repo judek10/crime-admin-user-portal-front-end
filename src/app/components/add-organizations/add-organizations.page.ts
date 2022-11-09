@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import * as Papa from 'papaparse';
-import { Key } from 'protractor';
+import { Organization } from 'src/app/model/organization';
 
 @Component({
   selector: 'app-add-organizations',
@@ -14,40 +12,24 @@ export class AddOrganizationsPage implements OnInit {
   
   organizationText:string;
   organizationID:any;
-  organizations:any[]=[];
-  key:any;
+  organizations : Organization[] = [{name : "org1", id : "12345"}, {name : "org2", id : "678910"}];
 
-  constructor(private http:HttpClient) {
-
+  constructor() {
+    localStorage.setItem('organizations', JSON.stringify(this.organizations));
    }
    
 
   submit(){ 
-    let data = { Name: this.organizationText, ID: this.organizationID};
-    localStorage.setItem('key',JSON.stringify(data));
-    console.log(this.organizationText, this.organizationID);
+    let organization = new Organization(this.organizationText, this.organizationID);
+    this.organizations.push(organization);
+    localStorage.setItem('organizations', JSON.stringify(this.organizations));
     this.organizationText = '';
     this.organizationID = '';
-    this.organizations.push([this.organizationID, this.organizationText]);
-  }
-  load(){
-    let data: any= localStorage.getItem('key');
-    this.key = JSON.stringify(data);
-    alert(data);
+    
   }
 
   ngOnInit() {
-    this.loadDataFromCsvFile();
-  }
 
-  loadDataFromCsvFile() {
-    this.http.get("/assets/organizations.csv", {responseType:"text"}).subscribe((datatemp)=>{
-      let obj = Papa.parse(datatemp);
-      let arr = obj.data;
-      arr.splice(0,1);
-      this.organizations = arr;
-      console.log(this.organizations);
-    })
-  } 
+  }
 
 }

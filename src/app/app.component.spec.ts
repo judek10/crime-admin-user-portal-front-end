@@ -1,15 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
-
+import { fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutingModule } from './app-routing.module'
+import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LoginPage } from './components/login/login.page';
 
 describe('AppComponent', () => {
 
+  let router : Router;
+
   beforeEach(waitForAsync(() => {
+    
 
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [AppComponent, LoginPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -18,6 +24,13 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-  // TODO: add more tests!
+
+  
+  it('should redirect to login page', fakeAsync(() => {
+    router = TestBed.inject(Router);
+    router.navigate([""]).then(() => {
+      expect(location.pathname).toBe("/");
+    });
+  })); 
 
 });
