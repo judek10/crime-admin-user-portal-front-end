@@ -13,7 +13,7 @@ NodeJS is needed to download and manage packages.
 * Type the following command to install Ionic: `npm install -g @ionic/cli native-run cordova-res,`
 * Type the next command to install the capacitor: `npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem`
 * Type the next command to install a storage package: `npm install @ionic/storage-angular`
-* * Type the next command to install another storage package: `npm install @ionic/storage'
+* * Type the next command to install another storage package: `npm install @ionic/storage`
 * Type the following command to check all installations: `npm i`
 * To run the project in a web page type the command: `ionic serve`
 * If there's errors when running ionic serve saying this cannot be loaded because running scripts is disabled on this system, then type the command: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
