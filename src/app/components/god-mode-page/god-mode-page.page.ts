@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import * as Papa from 'papaparse';
 
 @Component({
   selector: 'app-god-mode-page',
