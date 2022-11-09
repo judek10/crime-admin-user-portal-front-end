@@ -26,13 +26,13 @@ Important files/folders to keep in mind about in the src folder:
 - Clone the repository into a new project on VScode.
 - Open a terminal.
 - Follow command steps in Development.md to make sure all needed packages are downloaded.
-- Type the command to start the web app: ionic serve.
+- Type the command to start the web app: `ionic serve`.
 ![image](https://user-images.githubusercontent.com/77819572/200946817-2f8bb1b7-f0b5-4323-ac94-beb65904963c.png)
 - This will open up a local web server to run the web app.
 - Any saved changes to the project while the app is running will automatically update the running web app. 
 - To stop the application, on the VScode terminal type in Ctrl-C.
 
-- To run the project's unit tests, type the following command: npm test.
+- To run the project's unit tests, type the following command: `npm test`.
 - A new web browser will appear with Jasmine testing results. 
 
 ## Troubleshooting
