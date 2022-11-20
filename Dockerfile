@@ -1,8 +1,7 @@
-FROM node:13-alpine as build
-WORKDIR /app
-COPY package*.json /app/
+FROM node:14
+WORKDIR /usr/src/app
+COPY ./ ./
 RUN npm install -g ionic
 RUN npm install
-COPY ./ /app/
-FROM nginx:alpine
-RUN rm -rf /usr/share/nginx/html/*
+EXPOSE 8100
+CMD [ "ionic", "serve", "--host=0.0.0.0"]
