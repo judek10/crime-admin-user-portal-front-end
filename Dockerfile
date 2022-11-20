@@ -4,4 +4,4 @@ COPY ./ ./
 RUN npm install -g ionic
 RUN npm install
 EXPOSE 8100
-CMD [ "ionic", "serve", "--host=0.0.0.0"]
+CMD [ "ionic", "serve", "--external"]
