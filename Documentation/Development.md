@@ -25,7 +25,7 @@ Upon first loading up the repository, the configuation files for typescript, ang
 In the src folder, the app folder contains all of the modules and components that make up the app. This is the main folder being worked with for app functionality.
 ![image](https://user-images.githubusercontent.com/77819572/198146683-b32b47a8-4a8f-4d1d-a198-75f891fc4d23.png)
 
-# Docker Development
+# Replicating via Docker
 * Install docker desktop for your OS
 * Clone this repository 
 * Build docker image via docker `build -t crime-admin-user-portal-project .`
