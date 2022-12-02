@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UsersService } from './users.service';
 
@@ -41,12 +41,13 @@ export class UsersComponent implements OnInit {
   //   this.users.splice(indexOfUser, 1);
   //   localStorage.setItem('users', JSON.stringify(this.users));
   // }
-  users$: Observable<any>;
+  users$: any;
 
+  //this calls the component to display the data from backend
   constructor(private usersService: UsersService) {}
   
-  ngOnInit(): void{
-      this.usersService.getUsers();
-  }
+    async ngOnInit(): Promise<void> {
+      this.users$ = await this.usersService.getUsers();
+  } 
 
 }
