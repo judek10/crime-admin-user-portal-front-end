@@ -3,9 +3,7 @@ export class User {
     id : string;
     isAdmin : boolean;
 
-    constructor(userId : string, email : string, isAdmin : boolean) {
-        this.email = email;
-        this.id = userId;
-        this.isAdmin = isAdmin;
+    constructor(values: Object = {}) {
+        Object.assign(this, values)
     }
 }
