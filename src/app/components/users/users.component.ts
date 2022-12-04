@@ -37,6 +37,21 @@ export class UsersComponent implements OnInit {
     async ngOnInit(): Promise<void> {
       var users = await this.usersService.getUsers();
       this.users$ = JSON.parse(JSON.stringify(users));
+      console.log(this.users$);
   } 
-  
+  delete(user:User){
+    var result = confirm('Are you sure you want to delete this user>');
+    if (result){
+    this.httpClient.delete('http://localhost:3000/users/'+user.id.toString()+'/delete')
+          .subscribe(
+             (data:any) => {
+              for(var i=0; i < this.users$.length; i++) {
+                if (this.users$[i].id == user.id) {
+                  this.users$.splice(i);
+                }
+              }
+          }
+          )
+        }
+  }  
 }
