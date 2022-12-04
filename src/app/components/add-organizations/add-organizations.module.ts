@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AddOrganizationsPageRoutingModule } from './add-organizations-routing.module';
 
-import { AddOrganizationsPage } from './add-organizations.page';
+import { OrganizationComponent } from './organization.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,6 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
     AddOrganizationsPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [AddOrganizationsPage]
+  declarations: [OrganizationComponent]
 })
 export class AddOrganizationsPageModule {}

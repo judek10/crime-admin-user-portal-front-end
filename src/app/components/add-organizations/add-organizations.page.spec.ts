@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule, IonRow } from '@ionic/angular';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { AddOrganizationsPage } from './add-organizations.page';
+import { OrganizationComponent } from './organization.component';
 import { HttpClient } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('AddOrganizationsPage', () => {
-  let component: AddOrganizationsPage;
-  let fixture: ComponentFixture<AddOrganizationsPage>;
+  let component: OrganizationComponent;
+  let fixture: ComponentFixture<OrganizationComponent>;
   let httpClient: HttpClient;
   let el: DebugElement;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddOrganizationsPage ],
+      declarations: [ OrganizationComponent ],
       imports: [IonicModule.forRoot(), HttpClientTestingModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AddOrganizationsPage);
+    fixture = TestBed.createComponent(OrganizationComponent);
     httpClient = TestBed.inject(HttpClient);
     
     component = fixture.componentInstance;
@@ -31,11 +31,11 @@ describe('AddOrganizationsPage', () => {
   });
 
   it('should be instance of organization Page', () => {
-    expect(component instanceof AddOrganizationsPage).toBe(true);
+    expect(component instanceof OrganizationComponent).toBe(true);
   });
 
   it('should show the expected number of rows', () => {
-    const fixture = TestBed.createComponent(AddOrganizationsPage);
+    const fixture = TestBed.createComponent(OrganizationComponent);
     fixture.detectChanges();
     const items = fixture.debugElement.queryAll(By.directive(IonRow));
     expect(items).toBeDefined();

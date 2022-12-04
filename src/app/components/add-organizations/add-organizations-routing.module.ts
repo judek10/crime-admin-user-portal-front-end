@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AddOrganizationsPage } from './add-organizations.page';
+import { OrganizationComponent } from './organization.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AddOrganizationsPage
+    component: OrganizationComponent
   }
 ];
 
