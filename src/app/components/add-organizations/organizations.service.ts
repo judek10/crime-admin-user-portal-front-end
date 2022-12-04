@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
 })
 export class OrganizationsService{
+    
     constructor(private httpClient: HttpClient){}
 
     getOrganizations(){
@@ -15,8 +16,7 @@ export class OrganizationsService{
                     resolve(data);
              })
         })
-
-    }
+     }
 }
 
 
