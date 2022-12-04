@@ -40,7 +40,7 @@ export class UsersComponent implements OnInit {
       console.log(this.users$);
   } 
   delete(user:User){
-    var result = confirm('Are you sure you want to delete this user>');
+    var result = confirm('Are you sure you want to delete this user?');
     if (result){
     this.httpClient.delete('http://localhost:3000/users/'+user.id.toString()+'/delete')
           .subscribe(
