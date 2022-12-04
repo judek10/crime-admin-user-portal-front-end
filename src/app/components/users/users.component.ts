@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UsersService } from './users.service';
+import { HttpClient } from "@angular/common/http";
+
 
 
 
@@ -12,42 +14,29 @@ import { UsersService } from './users.service';
 })
 export class UsersComponent implements OnInit {
   
-  // userID:string;
-  // userEmail:string;
-  // isAdmin:boolean = false;
+  userEmail:string;
+  username: string;
+  isAdmin:boolean = false;
+  users$: any[];
 
-  // users : User[] = [{id:"123", email:"jaking2@bsu.edu", isAdmin:true},
-  //                   {id:"456", email:"someadminemail@bsu.edu", isAdmin:true},
-  //                   {id:"789", email:"someuseremail@bsu.edu", isAdmin:false}];
-
-  // constructor() {
-  //   localStorage.setItem('users', JSON.stringify(this.users));
-  // }
-
-  // submit(){ 
-  //   let user = new User(this.userID, this.userEmail, this.isAdmin);
-  //   this.users.push(user);
-  //   localStorage.setItem('users', JSON.stringify(this.users));
-  //   this.userID = '';
-  //   this.userEmail = '';
-  //   this.isAdmin = false;
-  // }
-
-  // deleteUser(deletedUser : User) {
-  //   const indexOfUser = this.users.findIndex(user => {
-  //     return user.id == deletedUser.id;
-  //   });
-  //   console.log(indexOfUser);
-  //   this.users.splice(indexOfUser, 1);
-  //   localStorage.setItem('users', JSON.stringify(this.users));
-  // }
-  users$: any;
+  constructor(private usersService: UsersService, private httpClient: HttpClient ) {}
+ 
+  //send POST request to BACK-END
+  submit(userEmail:String, isAdmin:Boolean, username: String){ 
+    this.httpClient.post('http://localhost:3000/users/create', {"email": userEmail, "is_admin": isAdmin, "username": username})
+          .subscribe(
+             (data:any) => {
+                 this.users$.push(data);
+          })
+          this.userEmail = '';
+          this.username = '';
+          this.isAdmin = false;
+        }
 
   //this calls the component to display the data from backend
-  constructor(private usersService: UsersService) {}
-  
     async ngOnInit(): Promise<void> {
-      this.users$ = await this.usersService.getUsers();
+      var users = await this.usersService.getUsers();
+      this.users$ = JSON.parse(JSON.stringify(users));
   } 
-
+  
 }
