@@ -39,7 +39,7 @@ describe('AddOrganizationsPage', () => {
     fixture.detectChanges();
     const items = fixture.debugElement.queryAll(By.directive(IonRow));
     expect(items).toBeDefined();
-    expect(items.length - 1).toBe(component.organizations.length); // -1 because there's already an ion-row displayed for columns
+    expect(items.length - 1).toBe(component.organizations$.length); // -1 because there's already an ion-row displayed for columns
   });
 
   // it('should show organizations after setting them', () => {
