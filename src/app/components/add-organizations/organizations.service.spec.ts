@@ -34,18 +34,4 @@ describe("Organization Service", () => {
         organizationsService.getOrganizations();
         expect(organizationsService.getOrganizations).toHaveBeenCalled();
       });
-
-    // it("should return data", () => {
-    //     let users: User[];
-    //     let result = usersService.getUsers();
-    //     users = JSON.parse(JSON.stringify(result));
-    //     const req = httpTestingController.expectOne({
-    //       method: "GET",
-    //       url: baseUrl
-    //     });
-    
-    //     req.flush([result]);
-    
-    //     expect(users[0]).toEqual(user);
-    //   });
 });

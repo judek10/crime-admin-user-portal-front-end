@@ -27,13 +27,4 @@ describe('Users Page', () => {
   it('should be instance of users page', () => {
     expect(component instanceof UsersComponent).toBe(true);
   });
-
-  // it('should redirect to god-mode page', fakeAsync(() => {
-  //   // router = TestBed.inject(Router);
-  //   // router.navigate(["/god-mode-page"]).then(() => {
-  //   //   expect(location.pathname).toBe("/god-mode-page");
-  //   // });
-  //   spyOn(component.router, 'navigate').and.returnValue(true);
-  // }));
-
 });
