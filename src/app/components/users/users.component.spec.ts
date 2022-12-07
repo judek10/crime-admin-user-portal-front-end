@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -7,12 +8,11 @@ import { UsersComponent } from './users.component';
 describe('Users Page', () => {
   let component: UsersComponent;
   let fixture: ComponentFixture<UsersComponent>;
-  let router : Router;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [UsersComponent],
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(UsersComponent);

@@ -37,7 +37,6 @@ export class UsersComponent implements OnInit {
     async ngOnInit(): Promise<void> {
       var users = await this.usersService.getUsers();
       this.users$ = JSON.parse(JSON.stringify(users));
-      console.log(this.users$);
   } 
   delete(user:User){
     var result = confirm('Are you sure you want to delete this user?');

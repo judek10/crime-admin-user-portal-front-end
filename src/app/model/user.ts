@@ -1,7 +1,8 @@
 export class User {
+    id?: string;
+    username: string;
     email : string;
-    id : string;
-    isAdmin : boolean;
+    is_admin : boolean;
 
     constructor(values: Object = {}) {
         Object.assign(this, values)
