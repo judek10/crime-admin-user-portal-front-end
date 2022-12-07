@@ -31,13 +31,12 @@ export class UsersComponent implements OnInit {
     this.httpClient.post('http://localhost:3000/users/create', {"email": userEmail, "is_admin": isAdmin, "username": username,"organization_api_id": organizationId})
           .subscribe(
              (data:any) => {
-              console.log(data);
               this.users$.push(data);
+              this.userEmail = '';
+              this.username = '';
+              this.isAdmin = false;
+              this.organization = ''
           })
-          this.userEmail = '';
-          this.username = '';
-          this.isAdmin = false;
-          this.organization = ''
         }
 
   //this calls the component to display the data from backend for Users
@@ -74,9 +73,17 @@ export class UsersComponent implements OnInit {
     this.currentOrganizationId = org_id;
     
   }
-  getUserOrganization(organization_api_id){
-    const organization = this.getOrganizations();
-    return organization;
+  
+  //get name of user's organization
+  getUserOrganization(user_organization_api_id: string) : string {
+    let userOrganizationName : string;
+    for(var i=0; i < this.organizations$.length; i++) {
+      if (this.organizations$[i].api_id == user_organization_api_id) {
+        userOrganizationName = this.organizations$[i].name;
+      }
+    }
+    return userOrganizationName;
   }
+  
 
 }
