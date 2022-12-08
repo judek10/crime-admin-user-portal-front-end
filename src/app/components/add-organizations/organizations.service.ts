@@ -17,6 +17,15 @@ export class OrganizationsService{
              })
         })
      }
+
+     createOrganization(organizationName: string) {
+        return new Promise(resolve=>{
+            this.httpClient.post('http://localhost:3000/organizations/create', {name: organizationName})
+            .subscribe((data:any) => {
+              resolve(data);
+          });
+        });
+    }
 }
 
 

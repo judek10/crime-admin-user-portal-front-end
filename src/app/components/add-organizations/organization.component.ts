@@ -14,24 +14,22 @@ import { HttpClient } from "@angular/common/http";
 export class OrganizationComponent implements OnInit {
   
   organizationName:string;
-  organizations$: any[];
+  organizations: any[];
 
   //this calls the component to display the data from backend
   constructor(private organizationsService: OrganizationsService, private httpClient: HttpClient) {}
   
   //send POST request to BACK-END
-  submit(organizationName: String){ 
-      this.httpClient.post('http://localhost:3000/organizations/create', {name: organizationName})
-          .subscribe(
-             (data:any) => {
-                 this.organizations$.push(data);
-          })
-        this.organizationName = '';
-        }
+  submit(organizationName: string){ 
+      this.organizationsService.createOrganization(organizationName).then((data:any) => {
+        this.organizations.push(data);
+      });
+      this.organizationName = '';
+  }
 
   //GET organizations
     async ngOnInit(): Promise<void> {
       var organizations = await this.organizationsService.getOrganizations();
-      this.organizations$ = JSON.parse(JSON.stringify(organizations));
+      this.organizations = JSON.parse(JSON.stringify(organizations));
   } 
 }
