@@ -26,7 +26,7 @@
             <ion-item>
               <ion-label position="floating">Organization</ion-label>
               <ion-select [(ngModel)] = "organization" ngDefaultControl (ionChange)="updateOrganization($event)" placeholder="Select the Organization this user is with.">
-                <ion-select-option *ngFor="let organization of organizations$" [value]="organization.api_id">{{organization.name}}</ion-select-option>
+                <ion-select-option *ngFor="let organization of organizations" [value]="organization.api_id">{{organization.name}}</ion-select-option>
              </ion-select>
             </ion-item>
               
@@ -45,7 +45,7 @@
         <ion-col>Is Admin</ion-col>
         <ion-col>Organization</ion-col>
       </ion-row>
-      <ion-row *ngFor="let user of users$">
+      <ion-row *ngFor="let user of users">
           <ion-col>{{ user.id }}</ion-col>
           <ion-col>{{ user.email}}</ion-col>
           <ion-col>{{ user.username}}</ion-col>
