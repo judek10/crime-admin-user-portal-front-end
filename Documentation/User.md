@@ -1,5 +1,8 @@
 # Application Step-by-Step Guide
 
+## First step
+In order to run the application correctly, both the back-end and front-end projects must be running at the same time. 
+
 ## Login Page
 When first starting the application the login page will appear: ![image](https://user-images.githubusercontent.com/77819572/206339809-4883e89a-f5d6-4198-abec-1ee52a569995.png)
 
