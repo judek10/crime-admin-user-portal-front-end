@@ -28,5 +28,5 @@ In the src folder, the app folder contains all of the modules and components tha
 # Replicating via Docker
 * Install docker desktop for your OS
 * Clone this repository 
-* Build docker image via docker `build -t crime-admin-user-portal-project .`
-* Run image via docker `run -d -p 8100:8100 crime-admin-user-portal-project`
+* Build docker image via `docker build -t crime-admin-user-portal-project .`
+* Run image via `docker run -d -p 8100:8100 crime-admin-user-portal-project`
