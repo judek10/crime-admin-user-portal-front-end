@@ -14,7 +14,7 @@ NodeJS is needed to download and manage packages.
 * Type the next command to install the capacitor: `npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem`
 * Type the next command to install a storage package: `npm install @ionic/storage-angular`
 * * Type the next command to install another storage package: `npm install @ionic/storage`
-* Type the following command to check all installations: `npm i`
+* Type the following command to check all installations: `npm install`
 * To run the project in a web page type the command: `ionic serve`
 * If there's errors when running ionic serve saying this cannot be loaded because running scripts is disabled on this system, then type the command: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 * If there's continued errors when setting this up, try reloading the project and then enter the `ionic serve` command again.
@@ -28,5 +28,5 @@ In the src folder, the app folder contains all of the modules and components tha
 # Replicating via Docker
 * Install docker desktop for your OS
 * Clone this repository 
-* Build docker image via docker `build -t crime-admin-user-portal-project .`
-* Run image via docker `run -d -p 8100:8100 crime-admin-user-portal-project`
+* Build docker image via `docker build -t crime-admin-user-portal-project .`
+* Run image via `docker run -d -p 8100:8100 crime-admin-user-portal-project`
